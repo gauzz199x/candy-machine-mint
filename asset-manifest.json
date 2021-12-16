@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/candy-machine-mint/static/css/main.efa5bf06.chunk.css",
+    "main.js": "/candy-machine-mint/static/js/main.1a5c7128.chunk.js",
+    "main.js.map": "/candy-machine-mint/static/js/main.1a5c7128.chunk.js.map",
+    "runtime-main.js": "/candy-machine-mint/static/js/runtime-main.df905dd8.js",
+    "runtime-main.js.map": "/candy-machine-mint/static/js/runtime-main.df905dd8.js.map",
+    "static/js/2.52b9cc78.chunk.js": "/candy-machine-mint/static/js/2.52b9cc78.chunk.js",
+    "static/js/2.52b9cc78.chunk.js.map": "/candy-machine-mint/static/js/2.52b9cc78.chunk.js.map",
+    "static/js/3.8dfcd814.chunk.js": "/candy-machine-mint/static/js/3.8dfcd814.chunk.js",
+    "static/js/3.8dfcd814.chunk.js.map": "/candy-machine-mint/static/js/3.8dfcd814.chunk.js.map",
+    "index.html": "/candy-machine-mint/index.html",
+    "static/css/main.efa5bf06.chunk.css.map": "/candy-machine-mint/static/css/main.efa5bf06.chunk.css.map",
+    "static/js/2.52b9cc78.chunk.js.LICENSE.txt": "/candy-machine-mint/static/js/2.52b9cc78.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/candy-machine-mint/static/media/new_coffin.617ab42e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df905dd8.js",
+    "static/js/2.52b9cc78.chunk.js",
+    "static/css/main.efa5bf06.chunk.css",
+    "static/js/main.1a5c7128.chunk.js"
+  ]
+}
