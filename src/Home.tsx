@@ -25,7 +25,14 @@ const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)`
+  background-color: darkgoldenrod;
+  border-size: 10px;
+  border-color: black;
+  background-image: url("resources/button.png");
+  background-size(contain);
+
+`; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -167,59 +174,83 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
-      {wallet && (
-        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
-      )}
+      <div className='name-banner'>
+        <h2>Vampire Ape Gang</h2>
+        <h4>presents</h4>
+        <h2>SUPER SECRET STEALTH MINT</h2>
+      </div>
+      <div className='parent-container'>
+        <div className="info-container">
+          <p>WHAT A TERRIBLE NIGHT TO BE HUMAN. 
+            As darkness falls on this cursed night, 
+            1111 bloodthirsy apes are awakening from their centuries long slumber
+             in the crypts beneath the Solana Citadel...</p>
 
-      {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
+          {wallet && (
+            <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
+          )}
 
-      {wallet && <p>Total Available: {itemsAvailable}</p>}
+          {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
 
-      {wallet && <p>Redeemed: {itemsRedeemed}</p>}
+          <p>Price: 1 SOL</p>
+          
+          {wallet && <p>id: {props.candyMachineId.toBase58()}</p>}
 
-      {wallet && <p>Remaining: {itemsRemaining}</p>}
+          {wallet && <p>conf: {props.config.toBase58()}</p>}
 
-      <MintContainer>
-        {!wallet ? (
-          <ConnectButton>Connect Wallet</ConnectButton>
-        ) : (
-          <MintButton
-            disabled={isSoldOut || isMinting || !isActive}
-            onClick={onMint}
-            variant="contained"
-          >
-            {isSoldOut ? (
-              "SOLD OUT"
-            ) : isActive ? (
-              isMinting ? (
-                <CircularProgress />
-              ) : (
-                "MINT"
-              )
+
+          {wallet && <p>Total Available: {itemsAvailable}</p>}
+
+          {wallet && <p>Redeemed: {itemsRedeemed}</p>}
+
+          {wallet && <p>Remaining: {itemsRemaining}</p>}
+
+        </div>
+
+        <MintContainer>
+          <div className='mint-container'>
+            {!wallet ? (
+              <ConnectButton>Connect Wallet</ConnectButton>
             ) : (
-              <Countdown
-                date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
-                onComplete={() => setIsActive(true)}
-                renderer={renderCounter}
-              />
+              <MintButton
+                disabled={isSoldOut || isMinting || !isActive}
+                onClick={onMint}
+                variant="contained"
+              >
+                {isSoldOut ? (
+                  "SOLD OUT"
+                ) : isActive ? (
+                  isMinting ? (
+                    <CircularProgress />
+                  ) : (
+                    "MINT"
+                  )
+                ) : (
+                  <Countdown
+                    date={startDate}
+                    onMount={({ completed }) => completed && setIsActive(true)}
+                    onComplete={() => setIsActive(true)}
+                    renderer={renderCounter}
+                  />
+                )}
+              </MintButton>
             )}
-          </MintButton>
-        )}
-      </MintContainer>
+          </div>
+        </MintContainer>
 
-      <Snackbar
-        open={alertState.open}
-        autoHideDuration={6000}
-        onClose={() => setAlertState({ ...alertState, open: false })}
-      >
-        <Alert
+        <Snackbar
+          open={alertState.open}
+          autoHideDuration={6000}
           onClose={() => setAlertState({ ...alertState, open: false })}
-          severity={alertState.severity}
         >
-          {alertState.message}
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={() => setAlertState({ ...alertState, open: false })}
+            severity={alertState.severity}
+          >
+            {alertState.message}
+          </Alert>
+        </Snackbar>
+      </div>
     </main>
   );
 };

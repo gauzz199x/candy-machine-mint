@@ -1,15 +1,75 @@
 body {
-  margin: 0;
+  margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #303030;
+  background-image: url("resources/castle_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #FFFFFF;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.parent-container{
+  border-color: darkgoldenrod;
+  
+  margin:auto;
+  width: 30%;
+  height: 50%;
+  display: flex;
+  justify-self: center;
+  background-color: none;
+}
+
+.info-container{
+  padding: 10px;
+  background-color: #303030CC;
+  border: 3px solid darkgoldenrod;
+  width: 200px;
+  height: 50%;
+  
+  
+}
+
+.name-banner{
+  background-color: none;
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.mint-container{
+  padding: 10px;
+  background-color: none;
+  width: 200px;
+  height: 50%;
+  background-image: url("resources/new_coffin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: none;
+  
+ 
+  
+
+
+  margin: auto;
+  text-align: center;
+  padding-top: 190px;
+  padding-bottom: 50px;
+}
+
+.navbar{
+  background-color: #303030;
+}
+
+.navbar a{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
