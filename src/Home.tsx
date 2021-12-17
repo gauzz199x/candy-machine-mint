@@ -18,6 +18,8 @@ import {
   mintOneToken,
   shortenAddress,
 } from "./candy-machine";
+import { Style } from "@material-ui/icons";
+
 
 const ConnectButton = styled(WalletDialogButton)``;
 
@@ -175,7 +177,7 @@ const Home = (props: HomeProps) => {
   return (
     <main>
       <div className='name-banner'>
-        <h2>Vampire Ape Gang</h2>
+        <h2>????</h2>
         <h4>presents</h4>
         <h2>SUPER SECRET STEALTH MINT</h2>
       </div>
@@ -192,11 +194,8 @@ const Home = (props: HomeProps) => {
 
           {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
 
-          <p>Price: 1 SOL</p>
-          
-          {wallet && <p>id: {props.candyMachineId.toBase58()}</p>}
-
-          {wallet && <p>conf: {props.config.toBase58()}</p>}
+          <p>Price: 0.1 SOL</p>
+      
 
 
           {wallet && <p>Total Available: {itemsAvailable}</p>}
@@ -204,6 +203,8 @@ const Home = (props: HomeProps) => {
           {wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
           {wallet && <p>Remaining: {itemsRemaining}</p>}
+          
+          
 
         </div>
 
