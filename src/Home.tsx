@@ -11,6 +11,8 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
+
+
 import {
   CandyMachine,
   awaitTransactionSignatureConfirmation,
@@ -31,8 +33,8 @@ const MintButton = styled(Button)`
   background-color: darkgoldenrod;
   border-size: 10px;
   border-color: black;
-  background-image: url("resources/button.png");
-  background-size(contain);
+  
+  background-size(auto);
 
 `; // add your styles here
 
@@ -177,9 +179,9 @@ const Home = (props: HomeProps) => {
   return (
     <main>
       <div className='name-banner'>
-        <h2>????</h2>
+        <h2>Vamp Ape Gang</h2>
         <h4>presents</h4>
-        <h2>SUPER SECRET STEALTH MINT</h2>
+        <h2>SUPER SECRET OG MINT</h2>
       </div>
       <div className='parent-container'>
         <div className="info-container">
@@ -217,6 +219,7 @@ const Home = (props: HomeProps) => {
                 disabled={isSoldOut || isMinting || !isActive}
                 onClick={onMint}
                 variant="contained"
+                
               >
                 {isSoldOut ? (
                   "SOLD OUT"
