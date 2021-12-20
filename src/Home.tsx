@@ -13,6 +13,10 @@ import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
 
 
+
+
+
+
 import {
   CandyMachine,
   awaitTransactionSignatureConfirmation,
@@ -21,20 +25,29 @@ import {
   shortenAddress,
 } from "./candy-machine";
 import { Style } from "@material-ui/icons";
+import { resourceUsage } from "process";
 
 
-const ConnectButton = styled(WalletDialogButton)``;
+const ConnectButton = styled(WalletDialogButton)`
+  background-color: darkgoldenrod;
+  color: black;
+  border-size: 10px;
+  border-color: black;
+  
+  display: block;
+`;
 
 const CounterText = styled.span``; // add your styles here
 
-const MintContainer = styled.div``; // add your styles here
+const MintContainer = styled.div`background-image: url(resources/crypt.jpg)`; // add your styles here
 
 const MintButton = styled(Button)`
   background-color: darkgoldenrod;
   border-size: 10px;
   border-color: black;
   
-  background-size(auto);
+  background-size: (auto);
+  display: block;
 
 `; // add your styles here
 
@@ -178,48 +191,38 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
-      <div className='name-banner'>
-        <h2>Vamp Ape Gang</h2>
-        <h4>presents</h4>
-        <h2>SUPER SECRET OG MINT</h2>
+      <div className='logo'>
+        
+        
       </div>
       <div className='parent-container'>
         <div className="info-container">
-          <p>WHAT A TERRIBLE NIGHT TO BE HUMAN. 
-            As darkness falls on this cursed night, 
-            1111 bloodthirsy apes are awakening from their centuries long slumber
-             in the crypts beneath the Solana Citadel...</p>
+          <p>WHAT A TERRIBLE NIGHT TO BE HUMAN.
+          Here lies the everlasting gate to hell, where dracula resides
+          Here you may call upon the Vamp Ape Gang by clicking the mint button,
+             and recruit a Vamp Ape to your arsenal.</p>
 
-          {wallet && (
-            <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
-          )}
-
-          {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
-
-          <p>Price: 0.1 SOL</p>
-      
-
-
-          {wallet && <p>Total Available: {itemsAvailable}</p>}
-
-          {wallet && <p>Redeemed: {itemsRedeemed}</p>}
-
-          {wallet && <p>Remaining: {itemsRemaining}</p>}
-          
-          
 
         </div>
 
         <MintContainer>
           <div className='mint-container'>
+            
+            {wallet&&<p>Total Supply: {itemsAvailable}</p>}
+            {wallet&&<p>Remaining: {itemsRemaining}</p>}
+            <p>Price: 0.39 SOL</p>
             {!wallet ? (
-              <ConnectButton>Connect Wallet</ConnectButton>
+              
+                <ConnectButton className="mintbtn">
+
+                  Connect Wallet</ConnectButton>
+              
             ) : (
               <MintButton
                 disabled={isSoldOut || isMinting || !isActive}
                 onClick={onMint}
                 variant="contained"
-                
+                className="mintbtn"
               >
                 {isSoldOut ? (
                   "SOLD OUT"
@@ -254,6 +257,14 @@ const Home = (props: HomeProps) => {
             {alertState.message}
           </Alert>
         </Snackbar>
+      </div>
+
+      <div className="walletContainer">
+        {wallet && (
+          <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
+        )}
+
+        {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
       </div>
     </main>
   );

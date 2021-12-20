@@ -3,13 +3,17 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #303030;
-  background-image: url("resources/castle_background.jpg");
+  background-color: black;
+  background-image: url("resources/Website-final-animation.gif");
   background-size: cover;
+  
+  background-position: center center;
   background-repeat: no-repeat;
+  height: 100vh;
   color: #FFFFFF;
+  
 }
 
 code {
@@ -18,20 +22,21 @@ code {
 }
 
 .parent-container{
-  border-color: darkgoldenrod;
-  
+  border-color: rgb(65, 65, 65);
+  border-style: solid;
+  border-radius: 5px;
   margin:auto;
   width: 30%;
   height: 50%;
   display: flex;
   justify-self: center;
-  background-color: none;
+  background-color: #000000AA;
 }
 
 .info-container{
   padding: 10px;
-  background-color: #303030CC;
-  border: 3px solid darkgoldenrod;
+  background-color: none;
+  border: none;
   width: 200px;
   height: 50%;
   
@@ -50,7 +55,7 @@ code {
   background-color: none;
   width: 200px;
   height: 50%;
-  background-image: url("resources/new_coffin.png");
+  background-image: none;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,8 +67,7 @@ code {
 
   margin: auto;
   text-align: center;
-  padding-top: 190px;
-  padding-bottom: 50px;
+  
 }
 
 .navbar{
@@ -74,6 +78,34 @@ code {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.Button{
-  background-image: url("resources/button.png");
+.mintbtn{
+  background-image: url("resources/buttonStock1.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000000AA;
+  text-align: center;
+  height: 38px;
+  width: 140px;
+  padding: 10px;
+  margin: -10px;
+  color: #000000AA;
+  
+}
+
+.walletContainer{
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.logo{
+  position:center center;
+  background-image: url(resources/logo_png.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: auto;
 }
