@@ -87,10 +87,10 @@ code {
   text-align: center;
   height: 40px;
   width: 140px;
-  text-emphasis-color: black;
+  text-emphasis-color: white;
   background-attachment: fixed;
-  
-  color: #000000AA;
+  font-size: large;
+  color: white;
   
 }
 
@@ -109,4 +109,12 @@ code {
   background-repeat: no-repeat;
   height: 300px;
   width: auto;
+}
+
+text.white{
+  color: white;
+  font-size: large;
+  text-align: center center;
+  position: center;
+  width: 100%;
 }

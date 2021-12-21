@@ -42,12 +42,8 @@ const CounterText = styled.span``; // add your styles here
 const MintContainer = styled.div`background-image: url(resources/crypt.jpg)`; // add your styles here
 
 const MintButton = styled(Button)`
-  background-color: darkgoldenrod;
-  border-size: 10px;
-  border-color: black;
+  color: white;
   
-  background-size: (auto);
-  display: block;
 
 `; // add your styles here
 
@@ -197,8 +193,8 @@ const Home = (props: HomeProps) => {
       </div>
       <div className='parent-container'>
         <div className="info-container">
-          <p>WHAT A TERRIBLE NIGHT TO BE HUMAN.
-          Here lies the everlasting gate to hell, where dracula resides
+          <p>WHAT A TERRIBLE NIGHT TO BE HUMAN.</p>
+          <p>Here lies the everlasting gate to hell, where Dracula resides.
           Here you may call upon the Vamp Ape Gang by clicking the mint button,
              and recruit a Vamp Ape to your arsenal.</p>
 
@@ -218,11 +214,15 @@ const Home = (props: HomeProps) => {
                   Connect Wallet</ConnectButton>
               
             ) : (
+              <view>
+
               <MintButton
+                
                 disabled={isSoldOut || isMinting || !isActive}
                 onClick={onMint}
                 variant="contained"
                 className="mintbtn"
+                
               >
                 {isSoldOut ? (
                   "SOLD OUT"
@@ -230,7 +230,8 @@ const Home = (props: HomeProps) => {
                   isMinting ? (
                     <CircularProgress />
                   ) : (
-                    "MINT"
+                    <text className="white"> MINT</text>
+                    
                   )
                 ) : (
                   <Countdown
@@ -241,6 +242,8 @@ const Home = (props: HomeProps) => {
                   />
                 )}
               </MintButton>
+              </view>
+              
             )}
           </div>
         </MintContainer>
