@@ -214,7 +214,7 @@ const Home = (props: HomeProps) => {
                   Connect Wallet</ConnectButton>
               
             ) : (
-              <view>
+              
 
               <MintButton
                 
@@ -230,7 +230,7 @@ const Home = (props: HomeProps) => {
                   isMinting ? (
                     <CircularProgress />
                   ) : (
-                    <text className="white"> MINT</text>
+                    <text className="white">MINT</text>
                     
                   )
                 ) : (
@@ -242,7 +242,7 @@ const Home = (props: HomeProps) => {
                   />
                 )}
               </MintButton>
-              </view>
+              
               
             )}
           </div>
