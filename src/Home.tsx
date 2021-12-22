@@ -230,7 +230,7 @@ const Home = (props: HomeProps) => {
                   isMinting ? (
                     <CircularProgress />
                   ) : (
-                    <text className="white">MINT</text>
+                    <text>MINT</text>
                     
                   )
                 ) : (
